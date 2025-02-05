@@ -34,6 +34,25 @@ body::after {
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
+header {
+    background-color: none;
+    color: #fff;
+    padding: 20px 0;
+    position: relative;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -60,7 +79,9 @@ body.page-loaded main {
 }
 /* Стили для навигации */
 nav {
-    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 
@@ -129,7 +150,6 @@ form {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     text-align: left;
 }
-
 form label {
     display: block;
     margin-bottom: 15px;
@@ -309,3 +329,52 @@ footer p {
         padding: 10px 20px;
     }
 }
+/* Стили для сообщений */
+.messages {
+    margin: 20px auto;
+    max-width: 1200px;
+    padding: 0 20px;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.alert-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.alert-info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+    border: 1px solid #bee5eb;
+}
+
+.alert-warning {
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+}
+.btn-logout i {
+    margin-right: 5px;
+}
+.logout-form {
+    background: none;
+    border: none;
+    margin: 0;
+    padding: 0;
+}
+
+

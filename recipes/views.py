@@ -6,6 +6,12 @@ from .forms import RecipeForm
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
+from django.shortcuts import render
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import redirect
+from django.contrib.auth import logout
+from django.contrib import messages
+
 
 def home(request):
     recipes = Recipe.objects.order_by('?')[:5]
@@ -49,3 +55,13 @@ def register(request):
     else:
         form = UserCreationForm()
     return render(request, 'recipes/register.html', {'form': form})
+
+@login_required
+def profile(request):
+    return render(request, 'registration/profile.html')
+
+def custom_logout(request):
+    logout(request)
+    messages.success(request, "Вы успешно вышли из системы.")
+    return redirect('home')
+from django.shortcuts import render

@@ -7,4 +7,7 @@ urlpatterns = [
     path('add/', views.add_recipe, name='add_recipe'),
     path('edit/<int:recipe_id>/', views.edit_recipe, name='edit_recipe'),
     path('register/', views.register, name='register'),
+    path('accounts/profile/', views.profile, name='profile'),
+    path('accounts/logout/', views.custom_logout, name='logout'),
+    # Другие маршруты...
 ]
