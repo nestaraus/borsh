@@ -19,7 +19,7 @@ body::after {
     content: "";
     background: url('../img/chef.png') no-repeat center center;
     opacity: 0.5;
-    position: fixed;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -376,5 +376,24 @@ footer p {
     margin: 0;
     padding: 0;
 }
+/* Адаптивные карточки */
+.card {
+    transition: transform 0.2s;
+}
 
+.card:hover {
+    transform: scale(1.02);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+
+@media (max-width: 768px) {
+    .form {
+        padding: 15px;
+    }
+}
 
