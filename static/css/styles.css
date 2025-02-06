@@ -12,7 +12,6 @@ body {
     position: relative;
     z-index: 1;
     overflow-x: hidden;
-    display: flex;
 }
 
 /* Фоновое изображение повара */
@@ -392,7 +391,7 @@ footer p {
 }
 
 
-@media (max-width: 900px) {
+@media (max-width: 768px) {
     .form {
         padding: 15px;
     }
