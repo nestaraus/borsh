@@ -11,7 +11,7 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect
 from django.contrib.auth import logout
 from django.contrib import messages
-
+from django.contrib.auth.models import User
 
 def home(request):
     recipes = Recipe.objects.order_by('?')[:5]
@@ -26,7 +26,12 @@ def add_recipe(request):
         form = RecipeForm(request.POST, request.FILES)
         if form.is_valid():
             recipe = form.save(commit=False)
-            recipe.author = request.user
+            # Если пользователь не аутентифицирован, используем "анонимного" пользователя
+            if request.user.is_authenticated:
+                recipe.author = request.user
+            else:
+                anonymous_user, created = User.objects.get_or_create(username='Anonymous')
+                recipe.author = anonymous_user
             recipe.save()
             form.save_m2m()
             return redirect('home')

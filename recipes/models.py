@@ -13,7 +13,7 @@ class Recipe(models.Model):
     steps = models.TextField()
     cooking_time = models.CharField(max_length=50)
     image = models.ImageField(upload_to='recipes/')
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     ingredients = models.TextField()
     categories = models.ManyToManyField(Category)
 
