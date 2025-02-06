@@ -12,6 +12,7 @@ body {
     position: relative;
     z-index: 1;
     overflow-x: hidden;
+    display: flex;
 }
 
 /* Фоновое изображение повара */
@@ -19,7 +20,7 @@ body::after {
     content: "";
     background: url('../img/chef.png') no-repeat center center;
     opacity: 0.5;
-    position: flex;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
@@ -38,10 +39,7 @@ header {
     background-color: none;
     color: #fff;
     padding: 20px 0;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
 }
 header .container {
     display: flex;
@@ -85,9 +83,6 @@ nav {
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 1.1rem;
-    padding: 0.5rem 1rem;
-    transition: background-color 0.3s ease;
 }
 
 
@@ -110,8 +105,6 @@ nav a, form button {
 nav a:hover {
     background-color: #ff3b2f;
     transform: translateY(-2px);
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
 }
 
 nav a:active {
@@ -399,14 +392,9 @@ footer p {
 }
 
 
-@media (max-width: 768px) {
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .nav-link {
-        font-size: 1rem;
-        padding: 0.5rem;
+@media (max-width: 900px) {
+    .form {
+        padding: 15px;
     }
 }
 
